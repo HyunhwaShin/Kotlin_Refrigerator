@@ -22,7 +22,7 @@ abstract class ContactDB : RoomDatabase(){
                 synchronized(ContactDB::class){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                     ContactDB::class.java, "contact")
-                        .fallbackToDestructiveMigration()
+                        .fallbackToDestructiveMigration() //갱신될 때 기존의 테이블 버리고 새로 사용
                         .build()
                 }
             }
