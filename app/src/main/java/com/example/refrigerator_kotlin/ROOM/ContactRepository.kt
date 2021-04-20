@@ -16,6 +16,8 @@ class ContactRepository(application: Application) {
         return contacts
     }
 
+    //메인 thread 에 접근하려하면 오류 발생
+    //so 별도의 thread 에서 Room 의 데이터에 접근해야 한다
     fun insert(contact : Contact){
         try{
             val thread = Thread(Runnable {
