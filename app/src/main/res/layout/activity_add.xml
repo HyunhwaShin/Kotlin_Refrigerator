@@ -1,0 +1,116 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:src="@drawable/hamburger"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+            <EditText
+                android:gravity="center"
+                android:background="@drawable/round"
+                android:id="@+id/food_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="음식 명" />
+
+            <Button
+                android:background="@drawable/round"
+                android:id="@+id/limitDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="유통 기한"
+                android:inputType="date" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보관위치"
+                    />
+                <LinearLayout
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="냉동"
+                        />
+                    <Switch
+                        android:gravity="center"
+                        android:background="@drawable/round"
+                        android:id="@+id/up_down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="냉장"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/memo"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:paddingLeft="30dp"
+        android:background="@drawable/memo"
+        android:hint="Memo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <Button
+            android:background="@drawable/round"
+            android:id="@+id/add_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:lineSpacingMultiplier="1.5"
+        android:textSize="23px"
+        android:paddingTop="50dp"
+        android:paddingLeft="20dp"
+        android:text="         - 이름, 사진, 유통기한은 필수입니다.\n
+        - 유통기한 알람은 9시에 울립니다.\n
+        - 리스트를 짧게 클릭하면 세부내용이 나오고, 길게 클릭한 경우 삭제됩니다.\n
+        - 냉장고에서 음식을 제거한 경우엔 리스트에서 삭제해주세요. "/>
+
+</LinearLayout>

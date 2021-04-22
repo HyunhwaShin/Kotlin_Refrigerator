@@ -1,18 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+        <Button
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:id="@+id/paste"
+            android:gravity="right|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/paste"
+            android:text="0 / 0"
+            />
+        <Button
+            android:background="@drawable/round"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체"
+            />
+        <Button
+            android:background="@drawable/round"
+            android:layout_weight="1"
+            android:id="@+id/down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉동"
+            />
+        <Button
+            android:background="@drawable/round"
+            android:layout_weight="1"
+            android:id="@+id/up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉장"
+            />
+        <Button
+            android:background="@drawable/round"
+            android:layout_weight="1"
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/comment"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="보관된 음식 리스트"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/main_recycleview"
+        app:layout_constraintBottom_toTopOf="@+id/main_button"/>
+<!--        tools:listitem="@layout/"-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

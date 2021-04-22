@@ -1,6 +1,7 @@
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.example.refrigerator_kotlin.Repository.FoodRepository
 
 class FoodViewModel(application: Application) : AndroidViewModel(application) {
 
