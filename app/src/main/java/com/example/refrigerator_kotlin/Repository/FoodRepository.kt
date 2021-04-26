@@ -1,5 +1,3 @@
-package com.example.refrigerator_kotlin.Repository
-
 import Food
 import FoodDB
 import FoodDao
