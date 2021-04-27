@@ -69,7 +69,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:id="@+id/main_recycleview"
+        android:id="@+id/main_recyclerview"
         app:layout_constraintBottom_toTopOf="@+id/main_button"/>
 <!--        tools:listitem="@layout/"-->
 
