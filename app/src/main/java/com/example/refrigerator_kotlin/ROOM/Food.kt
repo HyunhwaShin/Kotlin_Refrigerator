@@ -8,10 +8,9 @@ data class Food(
     @ColumnInfo(name ="foodName") var foodName : String,
     @ColumnInfo(name = "limitDate") var limitDate : String,
     @ColumnInfo(name = "upDown") var upDown : String,
-    @ColumnInfo(name = "path") var path : String,
     @ColumnInfo(name = "memo") var memo : String
 
 
 ) {
-    constructor() : this(null,"","","","","")
+    constructor() : this(null,"","","","")
 }
