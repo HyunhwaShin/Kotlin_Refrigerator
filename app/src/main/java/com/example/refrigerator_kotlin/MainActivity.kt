@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 //MainAc 의 역할
 //ViewModel 의 instance 를 만들고 이를 관찰하는 역할
@@ -29,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         })
 
         val lm = LinearLayoutManager(this)
-//        main_recyclerview.adapter = adapter
-//        main_recyclerview.layoutManager = lm
-//        main_recyclerview.setHasFixedSize(true)
+        main_recyclerview.adapter = adapter
+        main_recyclerview.layoutManager = lm
+        main_recyclerview.setHasFixedSize(true)
 
         foodViewModel = ViewModelProviders.of(this).get(FoodViewModel::class.java)
 
