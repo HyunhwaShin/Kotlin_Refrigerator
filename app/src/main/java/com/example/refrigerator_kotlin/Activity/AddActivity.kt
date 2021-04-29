@@ -1,4 +1,4 @@
-package com.example.refrigerator_kotlin
+package com.example.refrigerator_kotlin.Activity
 
 import Food
 import FoodViewModel
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import com.example.refrigerator_kotlin.R
 import kotlinx.android.synthetic.main.activity_add.*
 import java.util.*
 
@@ -84,7 +85,7 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
             if(foodName.isEmpty() || limitDate.text.toString().isEmpty()){
                 Toast.makeText(this, "음식명 과 유통기한을 입력해주세요.", Toast.LENGTH_LONG).show()
             }else{
-                val food = Food(id, foodName, deadDate!!, state!!, memo)
+                val food = Food(id, foodName, deadDate!!, upDown, memo)
                 foodViewModel.insert(food)
                 finish()
             }
@@ -107,9 +108,11 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
     }
 
     companion object{
+        const val EXTRA_FOOD_ID = "EXTRA_FOOD_ID"
         const val EXTRA_FOOD_NAME = "EXTRA_FOOD_NAME"
         const val EXTRA_FOOD_LIMITDATE = " EXTRA_FOOD_LIMITDATE"
-        const val EXTRA_FOOD_ID = "EXTRA_FOOD_ID"
+        const val EXTRA_FOOD_STATE = "EXTRA_FOOD_STATE"
+        const val EXTRA_FOOD_MEMO = "EXTRA_FOOD_MEMO"
     }
 }
 

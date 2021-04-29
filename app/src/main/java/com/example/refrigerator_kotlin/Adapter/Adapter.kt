@@ -1,7 +1,9 @@
+package com.example.refrigerator_kotlin.Adapter
+
+import Food
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.refrigerator_kotlin.R
@@ -23,7 +25,7 @@ class Adapter(val ItemClick:(Food) -> Unit, val ItemLongClick:(Food) -> Unit)
         viewHolder.bind(foods[position])
     }
 
-    //ViewHolder 를 Adapter 클래스안에 넣기위해 inner class 사용
+    //ViewHolder 를 com.example.refrigerator_kotlin.Adapter.Adapter 클래스안에 넣기위해 inner class 사용
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val F_name = itemView.findViewById<TextView>(R.id.f_name)
         private val L_date = itemView.findViewById<TextView>(R.id.l_date)

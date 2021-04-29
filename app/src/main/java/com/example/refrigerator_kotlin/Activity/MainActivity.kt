@@ -1,14 +1,16 @@
-package com.example.refrigerator_kotlin
+package com.example.refrigerator_kotlin.Activity
 
-import Adapter
+import com.example.refrigerator_kotlin.Adapter.Adapter
 import Food
 import FoodViewModel
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.refrigerator_kotlin.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 //MainAc 의 역할
@@ -24,7 +26,12 @@ class MainActivity : AppCompatActivity() {
 
         //set ItemClick & LongItemClick
         val adapter = Adapter({ food ->
-            //
+            val intent = Intent (this, AddActivity::class.java)
+            intent.putExtra(AddActivity.EXTRA_FOOD_ID, food.id)
+            intent.putExtra(AddActivity.EXTRA_FOOD_NAME, food.foodName)
+            intent.putExtra(AddActivity.EXTRA_FOOD_LIMITDATE, food.limitDate)
+            intent.putExtra(AddActivity.EXTRA_FOOD_STATE, food.upDown)
+            intent.putExtra(AddActivity.EXTRA_FOOD_MEMO, food.memo)
         },{ food ->
         deleteDialog(food)
         })
