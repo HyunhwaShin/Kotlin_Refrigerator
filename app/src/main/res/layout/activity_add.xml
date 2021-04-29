@@ -34,7 +34,7 @@
 
             <Button
                 android:background="@drawable/round"
-                android:id="@+id/add_limitDate"
+                android:id="@+id/add_limitDate_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="유통 기한"
