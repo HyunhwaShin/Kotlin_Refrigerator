@@ -36,6 +36,8 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
             && intent.hasExtra((EXTRA_FOOD_ID))) {
             add_foodName.setText(intent.getStringExtra(EXTRA_FOOD_NAME))
             add_limitDate_Button.text = intent.getStringExtra(EXTRA_FOOD_LIMITDATE)
+            add_upDown.setText(intent.getStringExtra(EXTRA_FOOD_STATE))
+            add_memo.setText(intent.getStringExtra(EXTRA_FOOD_MEMO))
             id = intent.getLongExtra(EXTRA_FOOD_ID, -1)
         }
 

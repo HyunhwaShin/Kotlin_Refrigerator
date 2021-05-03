@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.refrigerator_kotlin.R
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 //MainAc 의 역할
 //ViewModel 의 instance 를 만들고 이를 관찰하는 역할
@@ -58,5 +61,26 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("확인"){ _, _ -> foodViewModel.delete(food)
             }
         builder.show()
+    }
+
+    private fun over_limit_date(f_date :String): Boolean {
+        try{
+            //date format
+            val d_format = SimpleDateFormat("yyyy/MM/dd")
+
+            val cal = Calendar.getInstance()
+            val today = d_format.format(cal.time)
+
+            val date1 = d_format.parse(f_date) //유통기한
+            val date2 = d_format.parse(today) //오늘
+
+            if(date1.before(date2)|| date1==date2){
+                return true //유통기한 지남
+            }
+
+        }catch (e: ParseException){
+            e.printStackTrace()
+        }
+        return false //유통기한 안지남
     }
 }
