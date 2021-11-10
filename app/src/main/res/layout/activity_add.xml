@@ -109,7 +109,7 @@
         android:textSize="23px"
         android:paddingTop="50dp"
         android:paddingLeft="20dp"
-        android:text="         - 이름, 사진, 유통기한은 필수입니다.\n
+        android:text="         - 이름, 유통기한은 필수입니다.\n
         - 유통기한 알람은 9시에 울립니다.\n
         - 리스트를 짧게 클릭하면 세부내용이 나오고, 길게 클릭한 경우 삭제됩니다.\n
         - 냉장고에서 음식을 제거한 경우엔 리스트에서 삭제해주세요. "/>

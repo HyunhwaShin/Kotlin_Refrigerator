@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import java.lang.Exception
 
 //Repository 의 역할
-//food, Dao, DB 초기화 and ViewModel 에서 DB 접근 요청할 때 수행할 함수
+//food, Dao, DB 초기화 , ViewModel 에서 DB 접근 요청할 때 수행할 함수
 
 class FoodRepository(application: Application) {
 

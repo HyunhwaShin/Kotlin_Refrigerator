@@ -13,7 +13,7 @@ import java.util.*
 
 class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
 
-    private lateinit var foodViewModel: FoodViewModel
+    //private lateinit var foodViewModel: FoodViewModel
     private var id : Long? = null
     var state : String? =null
 
@@ -29,7 +29,7 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        foodViewModel = ViewModelProviders.of(this).get(FoodViewModel::class.java)
+        //foodViewModel = ViewModelProviders.of(this).get(FoodViewModel::class.java)
 
         //intent (not null & get Extras) check
         if (intent != null && intent.hasExtra(EXTRA_FOOD_NAME) && intent.hasExtra((EXTRA_FOOD_LIMITDATE))
@@ -59,7 +59,7 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
 
         //유통기한 버튼
         add_limitDate_Button.setOnClickListener{
-            val datePickerDialog = DatePickerDialog(this@AddActivity,this@AddActivity, year, month, day)
+            val datePickerDialog = DatePickerDialog(this@AddActivity,this@AddActivity, year, month, day) //현재날짜 보여주기
             datePickerDialog.show()
         }
 
@@ -88,7 +88,7 @@ class AddActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener{
                 Toast.makeText(this, "음식명 과 유통기한을 입력해주세요.", Toast.LENGTH_LONG).show()
             }else{
                 val food = Food(id, foodName, deadDate!!, upDown, memo)
-                foodViewModel.insert(food)
+                //foodViewModel.insert(food)
                 finish()
             }
         }
